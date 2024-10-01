@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    
+
     stages {
         stage('Checkout') {
             steps {
@@ -28,7 +28,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    docker.build("todolist-app:${env.BUILD_ID}")
+                    docker.build("midterm_project:${env.BUILD_ID}")
                 }
             }
         }
@@ -36,7 +36,7 @@ pipeline {
         stage('Deploy to Docker') {
             steps {
                 script {
-                    docker.image("todolist-app:${env.BUILD_ID}").run('-d -p 8080:8080')
+                    docker.image("midterm_project:${env.BUILD_ID}").run('-d -p 8080:8080')
                 }
             }
         }
@@ -44,7 +44,8 @@ pipeline {
 
     post {
         always {
-            cleanWs()
+            cleanWs()  
         }
     }
 }
+
