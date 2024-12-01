@@ -7,6 +7,9 @@
     <groupId>com.cen3024c.app</groupId>
     <artifactId>Midterm_Project_CEN4802C</artifactId>
     <version>1.0-SNAPSHOT</version>
+         <build>
+                  <finalName>Project Web App</finalName>
+         </build>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
